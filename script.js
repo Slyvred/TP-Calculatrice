@@ -30,13 +30,15 @@ function calc(listenumber) {
   liste = [];
 }
 
+// Supprime l'input qui vient d'être fait
 function del() {
   liste.pop();
   document.getElementById("result").innerHTML = liste.join("");
 }
 
+// Clear
 function reset() {
   liste = [];
-  document.getElementById("result").innerHTML = 0;
+  document.getElementById("result").innerHTML = "";
   document.getElementById("calcul").innerHTML = "";
 }
