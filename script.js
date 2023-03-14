@@ -1,10 +1,10 @@
 let liste = [];
 let allNumber = "";
-
 let start, end, time;
 
 // Ajoute l'input à la liste et à l'écran
 function addToList(arg) {
+  // Dès que l'utilisateur commence à écrire, on commence à mesurer
   if (liste.length == 0) {
     start = performance.now();
   }
@@ -36,10 +36,11 @@ function calc(listenumber) {
   document.getElementById("calcul").innerHTML = allNumber; // Affiche le calcul qu'on vient de faire
   liste = []; // On vide la liste pour pouvoir faire un nouveau calcul
 
-  // Chronomètre l'opération
+  // L'opération est terminée, on peut calculer le temps qu'elle a prit
   end = performance.now();
-  time = end - start;
-  console.log(`Temps d'opération: ${time/1000}s`);
+  time = (end - start) / 1000;
+  console.log(`Temps d'opération: ${time}s`);
+  document.title = `Temps d'opération: ${time}s`;
 }
 
 // Supprime l'input qui vient d'être fait
