@@ -1,8 +1,11 @@
 :root {
+  /* Source: https://www.color-name.com/ */
   --color-1: #222831;
   --color-2: #393e46;
   --color-3: #0092ca;
   --color-4: #eeeeee;
+  --color-5: #71c562;
+  --color-6: #e31937; /* Rouge Tesla */
   --font-size-1: 2rem;
 }
 
@@ -61,7 +64,7 @@ body {
   margin-top: 1.5rem;
 }
 
-.buttonContent {
+.btnContainer {
   background-color: var(--color-1);
   height: 70%;
   display: flex;
@@ -71,7 +74,7 @@ body {
   align-items: center;
 }
 
-.fbtn {
+.btnRow {
   width: 480px;
   height: 75px;
   position: relative;
@@ -107,6 +110,7 @@ body {
   background-color: var(--color-3);
   color: var(--color-1);
   box-shadow: none;
+  transform: scale(95%);
   transition: all 0.4s;
 }
 
@@ -121,6 +125,7 @@ body {
 .operator:hover {
   background-color: var(--color-4);
   box-shadow: none;
+  transform: scale(95%);
   transition: all 0.4s;
 }
 
@@ -137,13 +142,27 @@ body {
 .clear,
 .equal {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.4s;
+}
+
+.equal:hover {
+  background-color: var(--color-5);
+  color: var(--color-4);
+}
+
+.clear:hover {
+  background-color: var(--color-6);
+  color: var(--color-4);
+}
+
+.del:hover {
+  background-color: var(--color-3);
+  color: var(--color-4);
 }
 
 .equal:hover,
 .clear:hover,
 .del:hover {
-  background-color: var(--color-3);
-  color: var(--color-4);
+  transform: scale(95%);s
   box-shadow: none;
-  transition: 0.4s;
 }
