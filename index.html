@@ -19,11 +19,13 @@
         <h3 id="result">
         </h3>
       </div>
+
       <div class="btnContainer">
         <span class="btnRow">
           <input type="button" value="CLR" class="clear" onclick="reset()" />
           <input type="button" value="DEL" class="del" onclick="del()" />
-
+          <input type="button" value="(" class="operator" onclick="addToList('(')" />
+          <input type="button" value=")" class="operator" onclick="addToList(')')" />
           <!-- Opérateur -->
           <input
             type="button"
