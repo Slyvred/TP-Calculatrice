@@ -67,6 +67,7 @@ body {
 .btnContainer {
   background-color: var(--color-1);
   height: 70%;
+  width: fit-content;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -135,7 +136,8 @@ body {
 
 .del,
 .clear {
-  width: 33%;
+  width: max-content;
+  padding:0 10px;
 }
 
 .del,
