@@ -1,8 +1,15 @@
 let liste = [];
 let allNumber = "";
 
+let start, end, time;
+
+// Ajoute l'input à la liste et à l'écran
 function addToList(arg) {
-  if (arg === "+" || arg === "-" || arg === "*" || arg === "/") {
+  if (liste.length == 0) {
+    start = performance.now();
+  }
+  // Si l'input n'est pas un chiffre
+  if (!isFinite(arg)) {
     liste.push(" " + arg + " "); // " " est notre séparateur
   } else {
     liste.push(arg); // juste notre chiffre
@@ -25,9 +32,14 @@ function joinList() {
 
 function calc(listenumber) {
   joinList(listenumber);
-  document.getElementById("result").innerHTML = secureEval(allNumber);
-  document.getElementById("calcul").innerHTML = allNumber;
-  liste = [];
+  document.getElementById("result").innerHTML = secureEval(allNumber); // Affiche le résultat
+  document.getElementById("calcul").innerHTML = allNumber; // Affiche le calcul qu'on vient de faire
+  liste = []; // On vide la liste pour pouvoir faire un nouveau calcul
+
+  // Chronomètre l'opération
+  end = performance.now();
+  time = end - start;
+  console.log(`Temps d'opération: ${time/1000}s`);
 }
 
 // Supprime l'input qui vient d'être fait
@@ -36,7 +48,7 @@ function del() {
   document.getElementById("result").innerHTML = liste.join("");
 }
 
-// Clear
+// Clear la liste et l'écran
 function reset() {
   liste = [];
   document.getElementById("result").innerHTML = "";

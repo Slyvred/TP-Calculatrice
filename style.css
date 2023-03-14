@@ -163,6 +163,6 @@ body {
 .equal:hover,
 .clear:hover,
 .del:hover {
-  transform: scale(95%);s
+  transform: scale(95%);
   box-shadow: none;
 }
