@@ -1,0 +1,4 @@
+function printChar()
+{
+    document.getElementById()
+}
