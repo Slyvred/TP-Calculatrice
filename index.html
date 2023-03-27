@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <script src="baseCalculator.js"></script>
     <title>Calculaflop</title>
   </head>
   <body>
@@ -22,65 +22,66 @@
 
       <div class="btnContainer">
         <span class="btnRow">
-          <input type="button" value="CLR" class="clear" onclick="reset()" />
-          <input type="button" value="DEL" class="del" onclick="del()" />
-          <input type="button" value="(" class="operator" onclick="addToList('(')" />
-          <input type="button" value=")" class="operator" onclick="addToList(')')" />
+          <input type="button" value="CLR" class="clear" onclick="calculator.reset()" />
+          <input type="button" value="DEL" class="del" onclick="calculator.del()" />
+          <input type="button" value="(" class="operator" onclick="calculator.addToList('(')" />
+          <input type="button" value=")" class="operator" onclick="calculator.addToList(')')" />
+          
           <!-- Opérateur -->
           <input
             type="button"
             value="&#247"
             class="operator"
-            onclick="addToList('/')"
+            onclick="calculator.addToList('/')"
           />
         </span>
 
         <span class="btnRow">
-          <input type="button" value="7" class="num" onclick="addToList(7)" />
-          <input type="button" value="8" class="num" onclick="addToList(8)" />
-          <input type="button" value="9" class="num" onclick="addToList(9)" />
+          <input type="button" value="7" class="num" onclick="calculator.addToList(7)" />
+          <input type="button" value="8" class="num" onclick="calculator.addToList(8)" />
+          <input type="button" value="9" class="num" onclick="calculator.addToList(9)" />
 
           <!-- Opérateur -->
           <input
             type="button"
             value="+"
             class="operator"
-            onclick="addToList('+')"
+            onclick="calculator.addToList('+')"
           />
         </span>
 
         <span class="btnRow">
-          <input type="button" value="4" class="num" onclick="addToList(4)" />
-          <input type="button" value="5" class="num" onclick="addToList(5)" />
-          <input type="button" value="6" class="num" onclick="addToList(6)" />
+          <input type="button" value="4" class="num" onclick="calculator.addToList(4)" />
+          <input type="button" value="5" class="num" onclick="calculator.addToList(5)" />
+          <input type="button" value="6" class="num" onclick="calculator.addToList(6)" />
 
           <!-- Opérateur -->
           <input
             type="button"
             value="-"
             class="operator"
-            onclick="addToList('-')"
+            onclick="calculator.addToList('-')"
           />
         </span>
 
         <span class="btnRow">
-          <input type="button" value="1" class="num" onclick="addToList(1)" />
-          <input type="button" value="2" class="num" onclick="addToList(2)" />
-          <input type="button" value="3" class="num" onclick="addToList(3)" />
+          <input type="button" value="1" class="num" onclick="calculator.addToList(1)" />
+          <input type="button" value="2" class="num" onclick="calculator.addToList(2)" />
+          <input type="button" value="3" class="num" onclick="calculator.addToList(3)" />
 
           <!-- Opérateur -->
           <input
             type="button"
             value="&#215"
             class="operator"
-            onclick="addToList('*')"
+            onclick="calculator.addToList('*')"
           />
         </span>
 
         <span class="btnRow">
-          <input type="button" value="," class="num" onclick="addToList('.')" />
-          <input type="button" value="0" class="num" onclick="addToList(0)" />
-          <input type="button" value="=" class="equal" onclick="calc(liste)" />
+          <input type="button" value="," class="num" onclick="calculator.addToList('.')" />
+          <input type="button" value="0" class="num" onclick="calculator.addToList(0)" />
+          <input type="button" value="=" class="equal" onclick="calculator.calc()" />
         </span>
       </div>
     </div>
