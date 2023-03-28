@@ -32,7 +32,7 @@ class BaseCalculator {
 
   joinList() {
     this.allNumber = this.liste.join("");
-    this.allNumber = this.allNumber.replace(/\s+/g, ''); // Retire les espaces induits par nos séparateurs (opérateurs)
+    this.allNumber = this.allNumber.replace(/\s+/g, ""); // Retire les espaces induits par nos séparateurs (opérateurs)
   }
 
   calc() {
@@ -41,7 +41,9 @@ class BaseCalculator {
     console.log(this.liste);
     console.log(this.allNumber);
 
-    document.getElementById("result").innerHTML = this.secureEval(this.allNumber); // Affiche le résultat
+    document.getElementById("result").innerHTML = this.secureEval(
+      this.allNumber
+    ); // Affiche le résultat
     document.getElementById("calcul").innerHTML = this.allNumber; // Affiche le calcul qu'on vient de faire
 
     this.prec = []; // On supprime l'opération précédente
@@ -57,8 +59,15 @@ class BaseCalculator {
 
   // Supprime l'input qui vient d'être fait
   del() {
-    this.liste.pop();
-    document.getElementById("result").innerHTML = this.liste.join("");
+    if (document.getElementById("result").innerHTML == "") { // Si jamais on appuie deux fois sur del après avoir fini un calcul
+      document.getElementById("result").innerHTML = document.getElementById("calcul").innerHTML; // Notre résultat précédent devient le courant
+      document.getElementById("calcul").innerHTML = ""; // On efface ce qu'on avait avant
+      this.liste = this.prec; // On remplace la liste des arguments
+    }
+    else { // Sinon, on supprime juste le dernier caractère
+      this.liste.pop();
+      document.getElementById("result").innerHTML = this.liste.join("");
+    }
   }
 
   // Clear la liste et l'écran
