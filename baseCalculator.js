@@ -32,12 +32,18 @@ class BaseCalculator {
 
   joinList() {
     this.allNumber = this.liste.join("");
+    this.allNumber = this.allNumber.replace(/\s+/g, ''); // Retire les espaces induits par nos séparateurs (opérateurs)
   }
 
   calc() {
+    // On traite notre chaîne pour la rendre lisible par eval()
     this.joinList();
+    console.log(this.liste);
+    console.log(this.allNumber);
+
     document.getElementById("result").innerHTML = this.secureEval(this.allNumber); // Affiche le résultat
     document.getElementById("calcul").innerHTML = this.allNumber; // Affiche le calcul qu'on vient de faire
+
     this.prec = []; // On supprime l'opération précédente
     this.prec = this.liste; // On sauvegarde notre opération qui devient la précédente
     this.liste = []; // On vide la liste pour pouvoir faire un nouveau calcul
